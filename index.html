@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Chuyen doi tien te</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 style="font-weight: bold; text-align: center; font-family: cambri; color: red">Chuyển đổi tiền tệ</h1>
+        <table style="margin-left: 35%" >
+            <tr>
+                <td>
+                    <select id="chon1">
+                        <option value="dolar">Đô la Mỹ</option>
+                        <option value="dong">Việt Nam Đồng</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="chon2">
+                        <option value="dolar">Đô la Mỹ</option>
+                        <option value="dong">Việt Nam Đồng</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <input type="text" id="input"/>
+                </td>
+                <td>
+                    <input type="text" id="output"/>
+                </td>
+            </tr>
+        </table>
+        <button type="button" value="submit" style="margin-left: 45%" onclick="chuyendoi()"> Chuyển đổi</button>
+        
+        <script type="text/javascript">
+            function chuyendoi()
+            {
+                var so1 = document.getElementById('input').value;
+                var ch1=document.getElementById('chon1').value;
+                var ch2=document.getElementById('chon2').value;
+                var rs = 0;
+                if (ch1 == ch2)
+                {
+                     rs = parseInt(so1);
+                }
+                else if(ch1=="dolar"&& ch2=="dong")
+                {
+                     rs=parseInt(so1)*22758;
+                }
+                else if(ch1=="dong"&& ch2=="dolar")
+                {
+                     rs=parseFloat(so1)*0.000044;
+                }
+                document.getElementById('output').value = rs;
+            }
+        </script>
+    </body>
+</html>
